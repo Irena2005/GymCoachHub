@@ -1,0 +1,100 @@
+# services: Оголошення секції сервісів (контейнерів), які будуть запускатися.
+services:
+  # apache: Налаштування контейнера з Apache.
+ apache:
+    # build: Вказує, що контейнер буде збиратися з Dockerfile.
+  build:
+      # context: . - Контекст збірки (поточна директорія).
+   context: .
+      # dockerfile: Шлях до Dockerfile для Apache.
+   dockerfile: docker/apache/Dockerfile
+    # container_name: Ім'я контейнера Apache.
+  container_name: diplom_apache
+    # ports: Проксірування порту 8081 на 80 всередині контейнера.
+  ports:
+   - "8081:80"
+    # volumes: Мапінг локальних файлів у контейнер.
+  volumes:
+      # .:/var/www/html - Код проекту в контейнер.
+   - .:/var/www/html
+      # Конфігурація Apache.
+   - ./docker/apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+    # depends_on: Залежність від контейнера mysql.
+  depends_on:
+   - mysql
+    # networks: Підключення до мережі app-network.
+  networks:
+   - app-network
+    # restart: always - Автоматичний рестарт контейнера при збої.
+  restart: always
+
+  # mysql: Налаштування контейнера з MySQL.
+ mysql:
+    # image: mysql:8.0 - Використання офіційного образу MySQL 8.0.
+  image: mysql:8.0
+    # container_name: Ім'я контейнера MySQL.
+  container_name: diplom_mysql
+    # environment: Змінні середовища для ініціалізації БД.
+  environment:
+      # Пароль root-користувача.
+   MYSQL_ROOT_PASSWORD: rootpassword
+      # Назва бази даних.
+   MYSQL_DATABASE: db_sport
+      # Користувач БД.
+   MYSQL_USER: dbuser
+      # Пароль користувача.
+   MYSQL_PASSWORD: rootpassword
+   MYSQL_CHARSET: utf8mb4
+   MYSQL_COLLATION: utf8mb4_general_ci
+    # ports: Проксірування порту 3306.
+  ports:
+   - "3306:3306"
+    # volumes: Збереження даних та ініціалізація БД.
+  volumes:
+      # mysql-data:/var/lib/mysql - Збереження даних БД.
+   - mysql-data:/var/lib/mysql
+      # Ініціалізаційні скрипти.
+   - ./docker/mysql/init:/docker-entrypoint-initdb.d
+    # command: Додаткові параметри запуску MySQL.
+  command: --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci --default-authentication-plugin=mysql_native_password --init-connect='SET NAMES utf8mb4;'
+    # networks: Підключення до мережі app-network.
+  networks:
+   - app-network
+    # restart: always - Автоматичний рестарт контейнера при збої.
+  restart: always
+
+  # phpmyadmin: Налаштування контейнера phpMyAdmin.
+ phpmyadmin:
+    # image: phpmyadmin/phpmyadmin - Офіційний образ phpMyAdmin.
+  image: phpmyadmin/phpmyadmin
+    # container_name: Ім'я контейнера phpMyAdmin.
+  container_name: diplom_phpmyadmin
+    # environment: Змінні середовища для підключення до MySQL.
+  environment:
+      # Хост MySQL.
+   PMA_HOST: mysql
+      # Користувач MySQL.
+   PMA_USER: root
+      # Пароль користувача.
+   PMA_PASSWORD: rootpassword
+    # ports: Проксірування порту 8080.
+  ports:
+   - "8080:80"
+    # depends_on: Залежність від контейнера mysql.
+  depends_on:
+   - mysql
+    # networks: Підключення до мережі app-network.
+  networks:
+   - app-network
+    # restart: always - Автоматичний рестарт контейнера при збої.
+  restart: always
+
+# volumes: Оголошення іменованого тому для збереження даних MySQL.
+volumes:
+ mysql-data:
+
+# networks: Оголошення мережі для взаємодії контейнерів.
+networks:
+ app-network:
+    # driver: bridge - Використання мережевого драйвера bridge.
+  driver: bridge

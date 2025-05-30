@@ -1,0 +1,554 @@
+/* styles.css */
+
+/* Переменные */
+:root {
+    --primary-color: #304f6c;
+    --text-color: #ddd;
+    --bg-color: #000;
+    --footer-bg: #333;
+    --white: #fff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.3);
+    --border-radius: 10px;
+    --transition: all 0.3s ease;
+    --font-primary: 'Roboto', 'Open Sans', Arial, sans-serif;
+}
+
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+}
+
+/* Общие стили */
+body {
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    color: var(--text-color);
+    padding-top: 70px; /* Учитываем фиксированную навигацию */
+}
+
+.custom-line {
+    border: none;
+    height: 4px;
+    background-color: var(--white);
+    width: 100%;
+    margin: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Навигация */
+.navbar-bg {
+    width: 100%;
+    height: 50px;
+    background-color: var(--bg-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 997;
+}
+
+.navbar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 999;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #999;
+    font-weight: bold;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.navbar a:hover {
+    color: var(--text-color);
+}
+
+/* Заголовки */
+header {
+    padding: 20px;
+    text-align: center;
+}
+
+header h1, header h3 {
+    font-size: 2.2rem;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+header h5 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-style: normal;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-style: italic;
+}
+
+.tagline {
+    font-size: 1.8rem;
+    color: var(--white);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* О нас */
+.about {
+    padding: 50px 20px;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.about-content p {
+    max-width: 550px;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: rgba(48, 79, 108, 0.2);
+}
+
+.about-content img {
+    max-width: 450px;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+/* Главная страница */
+.gallery img {
+    width: auto;
+    height: 100px;
+    border-radius: var(--border-radius);
+    margin: 20px;
+}
+
+.start a {
+    padding: 8px 20px;
+    border-radius: 20px;
+    align-items: center;
+ margin:572px;
+    background-color: var(--white);
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.start a:hover {
+    transform: scale(1.05);
+    background-color: #a3a1a1;
+}
+
+.tagline-main {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    font-style: italic;
+    font-weight: lighter;
+    text-align: left;
+    margin: 20px 0;
+}
+
+/* Тренировки */
+.traintypes, .hardexercise, .fitness, .pilates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.traintypes a, .hardexercise a, .fitness a, .pilates a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    max-width: 300px;
+    transition: var(--transition);
+}
+
+.traintypes img, .hardexercise img, .fitness img, .pilates img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.traintypes a:hover img, .hardexercise a:hover img, .fitness a:hover img, .pilates a:hover img {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-hover);
+}
+
+.traintypes p, .hardexercise p, .fitness p, .pilates p {
+    font-size: 1.2rem;
+    color: #999;
+    margin-top: 10px;
+}
+
+.random a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--white);
+    color: var(--primary-color);
+    font-style: italic;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    margin: 20px auto;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.random a:hover {
+    background-color: #e6e6e6;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: var(--shadow);
+    transform: scale(0.9);
+    animation: scaleIn 0.3s ease forwards;
+}
+
+@keyframes scaleIn {
+    to { transform: scale(1); }
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.exercise-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+    justify-content: start;
+}
+
+.round-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.round-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.exercise-item p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+    flex: 1;
+}
+
+.done-icon {
+    font-size: 1.2rem;
+    color: green;
+    margin-left: 10px;
+}
+
+.save-btn {
+    background-color: #28a745;
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    transition: var(--transition);
+}
+
+.save-btn:hover {
+    background-color: #218838;
+}
+
+/* Профиль */
+.profile-container, .trainings {
+    background-color: #ddd;
+    padding: 40px 20px;
+    margin: 30px auto;
+    border-radius: var(--border-radius);
+    max-width: 1200px;
+}
+
+.profile-container h2, .trainings h2 {
+    font-size: 2rem;
+    color: #141d29;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.info-box label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.info-box input {
+    width: 100px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    margin: 20px 0;
+}
+
+#saved-trainings {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 20px;
+}
+
+.trainings a {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #565050;
+    color: var(--text-color);
+    border-radius: 20px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.trainings a:hover {
+    background-color: #6b6060;
+}
+
+/* Формы */
+.main {
+    background-color: var(--white);
+    padding: 30px;
+    max-width: 450px;
+    margin: 100px auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.main h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.main h3 {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.main label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.main input[type="text"],
+.main input[type="tel"],
+.main input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.main button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 16px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.main button[type="submit"]:hover {
+    background-color: #253f58;
+}
+
+.error-message, .success-message {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.error-message p {
+    color: #d8000c;
+}
+
+.success-message p {
+    color: #28a745;
+}
+
+/* Информация */
+.information .information-photo {
+    text-align: center;
+    padding: 20px;
+}
+
+.information .information-photo p {
+    font-size: 1.9rem;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.information .item {
+    display: inline-block;
+    margin: 20px 30px;
+}
+
+.information img {
+    width: 270px;
+    height: 270px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+/* Приглашение */
+.invite {
+    text-align: center;
+    padding: 20px;
+}
+
+.invite p {
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+.invite a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--white);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.invite a:hover {
+    background-color: #e6e6e6;
+}
+
+/* Футер */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    margin-top: 50px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-end;
+        background-color: var(--bg-color);
+        padding: 10px;
+    }
+
+    .about-content, .traintypes, .hardexercise, .fitness, .pilates {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content img, .gallery img, .information img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .main {
+        margin: 50px auto;
+        padding: 20px;
+    }
+
+    .profile-container, .trainings {
+        padding: 20px;
+    }
+
+    .tagline-main {
+        font-size: 2rem;
+    }
+}

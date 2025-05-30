@@ -1,0 +1,30 @@
+/* Оформлення модального вікна */
+.modal-content {
+    background-color: #f5efef; 
+    padding: 20px; 
+    border-radius: 8px; 
+    width: 80%; 
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Оформлення кнопки закриття модального вікна */
+.close-button {
+    position: absolute; /* Абсолютне позиціонування */
+    top: 10px; /* Відступ зверху */
+    right: 10px; 
+    font-size: 24px; 
+    font-weight: bold; 
+    color: #282626; 
+    cursor: pointer; 
+}
+
+/* Зміна кольору кнопки закриття при наведенні */
+.close-button:hover {
+    color: #000; 
+}
+
+#save-message {
+    margin-top: 8px;
+    text-align: center;
+}

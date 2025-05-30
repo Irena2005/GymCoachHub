@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /
+
+# Если файл существует — используем его
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Перенаправляем запросы к файлам в корне на файлы в src/pages/
+RewriteCond %{DOCUMENT_ROOT}/src/pages/$1.php -f
+RewriteRule ^([a-zA-Z0-9_-]+)\.php$ src/pages/$1.php [L,QSA]

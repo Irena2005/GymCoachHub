@@ -1,0 +1,300 @@
+/* Основний контейнер */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Секція профілю */
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+/* Блок інформації */
+.info-box {
+    flex: 1;
+    min-width: 250px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.info-box p {
+    margin: 10px 0;
+    color: #565050;
+}
+
+.info-box label {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.info-box input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.info-box button, .modal-btn {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.info-box button:hover, .modal-btn:hover {
+    background: #45a049;
+}
+
+/* Повідомлення про успіх або помилку */
+.success-message {
+    color: #4CAF50;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.error-message {
+    color: #d32f2f;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Зображення профілю */
+.profile-img {
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+/* Таблиця вимірів */
+.measurements {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.measurements-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.measurements-table th, .measurements-table td {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    text-align: center;
+    color: #565050;
+}
+
+.measurements-table th {
+    background: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+.measurements-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.measurements-table tr:hover {
+    background: #eef1f4;
+}
+
+/* Модальне вікно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.modal-content form label {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.modal-content form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content form button {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.modal-content form button:hover {
+    background: #45a049;
+}
+
+/* Секція тренувань */
+.trainings {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.training-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.discipline-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1;
+    min-width: 300px;
+}
+
+.discipline-card h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+.training-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.training-table th, .training-table td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #565050;
+}
+
+.training-table th {
+    background: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+.training-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.training-table tr:hover {
+    background: #eef1f4;
+}
+
+.add-training-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.add-training-btn:hover {
+    background: #45a049;
+}
+
+.no-data {
+    color: #6c757d;
+    text-align: center;
+    font-style: italic;
+    padding: 20px 0;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .training-stats {
+        flex-direction: column;
+    }
+
+    .discipline-card {
+        width: 100%;
+    }
+
+    .info-box {
+        width: 100%;
+    }
+
+    .profile-img {
+        max-width: 150px;
+    }
+}
