@@ -147,7 +147,7 @@ header p {
 /* Главная страница */
 .gallery img {
     width: auto;
-    height: 100px;
+    height: 250px;
     border-radius: var(--border-radius);
     margin: 20px;
 }
